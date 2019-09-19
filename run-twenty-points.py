@@ -1,6 +1,7 @@
 import deck
 import time
 
+    
 
 ###### initializing ######
 print("Innitializing Game")
@@ -17,6 +18,22 @@ print("Laying out cards now")
 inventory=deck.split(main_deck,10)
 negative_pile=[]
 positive_pile=[]
+hand=[]
+print("Hand is empty. 10 cards in inventory. Positive and Negative Piles are empty")
+operation = "A"
+while operation!= "Q":
+    print("l to look at inventory")
+    print("t to take card from main deck")
+    print("Q to quit")
+    operation = input("What action do you want to take?")
+    print("You chose " + operation)
+    if operation == "l":
+        deck.revealAll(inventory)
+     
+
+    
+    
+    
 ########################
 """
 Game continues while there are cards in the main_deck
@@ -27,6 +44,11 @@ Game continues while there are cards in the main_deck
     
     on the last hand, if there are no more cards in the deck, the player can add cards from inventory 
     only if they can use them to win the hand.
+
+    To win a hand: The number cards in the hand = 10
+    To loose a hand: The number cards in the hand are above 10 OR there are more than 10 cards in a hand.
+
+    
 
             
     At the end of all hands, 
